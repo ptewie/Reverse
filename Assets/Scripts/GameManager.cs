@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public bool isGamePaused = false;
 
+    public LayerMask yinLayerMask;
+    public LayerMask yangLayerMask;
+
     public GameState currentGameState;
     private GameState previousGameState;
     public GameStateChangedEvent OnGameStateChanged = new GameStateChangedEvent();
@@ -51,7 +54,10 @@ public class GameManager : MonoBehaviour
     
     }
 
-
+    public void PolaritySwitched()
+    {
+        Debug.Log("Polarity switched!");
+    }
     
     public void ChangeGameState(GameState state)
     {
